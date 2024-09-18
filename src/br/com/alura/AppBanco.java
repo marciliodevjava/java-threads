@@ -12,12 +12,12 @@ public class AppBanco {
         BigDecimal saqueDois = new BigDecimal(20);
         Conta conta = new Conta(cliente, saldoInicial);
 
-        OperacaoSaque operacao = new OperacaoSaque(conta, saldoInicial); // Saque o João
+        OperacaoSaque operacao = new OperacaoSaque(conta, saldoInicial);
 
-        operacao.executa();
+        Thread saqueDoJoao = new Thread(operacao);
+        Thread saqueDoMaria = new Thread(operacao);
 
-        // Saque maria
-
-        operacao.executa();
+        saqueDoJoao.start();
+        saqueDoMaria.start();
     }
 }
