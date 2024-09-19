@@ -2,7 +2,7 @@ package br.com.alura;
 
 import java.math.BigDecimal;
 
-public class OperacaoSaque implements Runnable{
+public class OperacaoSaque implements Runnable {
 
     private Conta conta;
     private BigDecimal valor;
@@ -19,7 +19,7 @@ public class OperacaoSaque implements Runnable{
         if (saldoAtual.compareTo(valor) >= 0) {
             System.out.println("Debitando valor da conta");
             conta.debitaSaldo(this.valor);
-            System.out.println("Saldo atual: " +conta.getSaldo());
+            System.out.println("Saldo atual: " + conta.getSaldo());
         }
         System.out.println("Finalizando operação de saque.");
     }
