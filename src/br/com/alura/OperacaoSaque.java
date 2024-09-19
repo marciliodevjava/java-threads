@@ -12,7 +12,7 @@ public class OperacaoSaque implements Runnable {
         this.valor = valor;
     }
 
-    public void executa() {
+    public synchronized void executa() {
         System.out.println("Iniciando operação de saque.");
         BigDecimal saldoAtual = conta.getSaldo();
 
@@ -23,6 +23,7 @@ public class OperacaoSaque implements Runnable {
         }
         System.out.println("Finalizando operação de saque.");
     }
+
 
     @Override
     public void run() {
