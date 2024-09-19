@@ -19,5 +19,7 @@ public class AppBanco {
 
         saqueDoJoao.start();
         saqueDoMaria.start();
+
+        System.out.println(Thread.currentThread().getName());
     }
 }
